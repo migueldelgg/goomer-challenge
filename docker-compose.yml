@@ -7,7 +7,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: miguel
-      POSTGRES_DB: goomer_db
+      POSTGRES_DB: db_goomer
     ports:
       - "5432:5432"
     volumes:
