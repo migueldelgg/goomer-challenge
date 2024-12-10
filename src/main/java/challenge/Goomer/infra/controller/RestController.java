@@ -1,32 +1,32 @@
 package challenge.Goomer.infra.controller;
 
-import challenge.Goomer.infra.entity.RestaurantEntity;
-import challenge.Goomer.infra.repository.RestaurantRepository;
+import challenge.Goomer.infra.dtos.CreateAddressData;
+import challenge.Goomer.infra.dtos.CreateRestaurantRequest;
+import challenge.Goomer.infra.service.CreateRestaurantUseCaseImpl;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @org.springframework.web.bind.annotation.RestController
+@RequiredArgsConstructor(onConstructor_ = @__(@Autowired))
 public class RestController {
 
-    @Autowired
-    private RestaurantRepository restaurantRepository;
+    private final CreateRestaurantUseCaseImpl createRestaurantUseCase;
 
-    @GetMapping("/criar")
-    public ResponseEntity<String> creating() {
-        var entidade = new RestaurantEntity();
-        entidade.setName("Example Restaurant");
-        entidade.setPhoto("example.jpg");
-        restaurantRepository.save(entidade);
-        var id = entidade.getId();
-        var created = entidade.getCreatedAt();
-        var updated = entidade.getUpdatedAt();
-        String message = String.format("Restaurant created with ID: %s, criado as: %s, atualizado as: %s", id, created, updated);
-        return ResponseEntity.ok(message);
-    }
+    @PostMapping("/")
+    public ResponseEntity<Object> create (
+            @RequestBody CreateRestaurantRequest createRestaurantRequest
+            ){
 
-    @GetMapping("/encontrar")
-    public ResponseEntity<Object> encontrar() {
-        return ResponseEntity.ok(restaurantRepository.findAll());
+        createRestaurantUseCase.
+                execute(
+                        createRestaurantRequest.getRestaurant(),
+                        createRestaurantRequest.getAddress()
+                );
+
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 }

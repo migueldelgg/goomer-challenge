@@ -46,4 +46,16 @@ public class RestExceptionHandler {
                 .build();
         return ResponseEntity.status(code).body(response);
     }
+
+    @ExceptionHandler(ViaCepException.class)
+    public ResponseEntity<ErrorMessage> handleViaCepException(
+            ViaCepException ex
+    ) {
+        var code = HttpStatus.INTERNAL_SERVER_ERROR;
+        ErrorMessage response = ErrorMessage.builder()
+                .code(code.getReasonPhrase())
+                .name(ex.getMessage())
+                .build();
+        return ResponseEntity.status(code).body(response);
+    }
 }
