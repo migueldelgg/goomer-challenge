@@ -1,4 +1,4 @@
-package challenge.Goomer.infra.dtos;
+package challenge.Goomer.infra.dtos.CreateRestaurantDTO;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;

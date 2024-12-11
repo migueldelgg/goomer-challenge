@@ -1,4 +1,4 @@
-package challenge.Goomer.infra.dtos;
+package challenge.Goomer.infra.service.viacep;
 
 public record ViaCepResponse (
         String cep,

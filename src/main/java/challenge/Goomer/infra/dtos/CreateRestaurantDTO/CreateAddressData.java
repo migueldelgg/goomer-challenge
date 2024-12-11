@@ -1,4 +1,4 @@
-package challenge.Goomer.infra.dtos;
+package challenge.Goomer.infra.dtos.CreateRestaurantDTO;
 
 import jakarta.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;

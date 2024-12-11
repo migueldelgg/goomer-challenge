@@ -26,7 +26,7 @@ public class AddressEntity {
     private String address;
 
     @JsonProperty(value = "address_complement")
-    @Column(name = "addresscomplement")
+    @Column(name = "address_complement")
     private String addressComplement;
 
     @NotNull

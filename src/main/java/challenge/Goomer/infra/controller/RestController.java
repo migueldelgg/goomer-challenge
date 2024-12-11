@@ -1,7 +1,6 @@
 package challenge.Goomer.infra.controller;
 
-import challenge.Goomer.infra.dtos.CreateAddressData;
-import challenge.Goomer.infra.dtos.CreateRestaurantRequest;
+import challenge.Goomer.infra.dtos.CreateRestaurantDTO.CreateRestaurantRequest;
 import challenge.Goomer.infra.service.CreateRestaurantUseCaseImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,11 +1,12 @@
 package challenge.Goomer.infra.service;
 
-import challenge.Goomer.infra.dtos.CreateAddressData;
-import challenge.Goomer.infra.dtos.CreateRestaurantData;
+import challenge.Goomer.infra.dtos.CreateRestaurantDTO.CreateAddressData;
+import challenge.Goomer.infra.dtos.CreateRestaurantDTO.CreateRestaurantData;
 import challenge.Goomer.infra.entity.AddressEntity;
 import challenge.Goomer.infra.entity.RestaurantEntity;
 import challenge.Goomer.infra.repository.AddressRepository;
 import challenge.Goomer.infra.repository.RestaurantRepository;
+import challenge.Goomer.infra.service.viacep.ViaCepHttpCall;
 import challenge.Goomer.useCases.CreateRestaurantUseCase;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;

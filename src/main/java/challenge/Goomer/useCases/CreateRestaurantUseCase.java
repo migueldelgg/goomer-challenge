@@ -1,7 +1,7 @@
 package challenge.Goomer.useCases;
 
-import challenge.Goomer.infra.dtos.CreateAddressData;
-import challenge.Goomer.infra.dtos.CreateRestaurantData;
+import challenge.Goomer.infra.dtos.CreateRestaurantDTO.CreateAddressData;
+import challenge.Goomer.infra.dtos.CreateRestaurantDTO.CreateRestaurantData;
 
 public interface CreateRestaurantUseCase {
 

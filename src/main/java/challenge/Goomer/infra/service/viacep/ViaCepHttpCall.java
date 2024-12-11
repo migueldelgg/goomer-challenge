@@ -1,8 +1,6 @@
-package challenge.Goomer.infra.service;
+package challenge.Goomer.infra.service.viacep;
 
 import challenge.Goomer.core.exceptions.ViaCepException;
-import challenge.Goomer.infra.dtos.ViaCepResponse;
-import challenge.Goomer.infra.entity.AddressEntity;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import org.springframework.stereotype.Service;
